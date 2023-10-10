@@ -1,8 +1,9 @@
 <!-- https://www.w3schools.com/howto/howto_js_slideshow.asp -->
-<h1>Hello World</h1>
-
 <style>
-    * {box-sizing:border-box}
+    * {
+        box-sizing:border-box;
+        font-size: 16px;
+    }
 
     .slideshow-container {
         max-width: 1000px;
@@ -12,6 +13,14 @@
 
     .mySlides {
         display: none;
+        max-height: 500px;
+
+
+    }
+
+    .mySlides img {
+        max-width: 100%;
+        background-size: contain;
 
     }
 
@@ -39,17 +48,29 @@
     }
 
     .text {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        background-color: rgba(118, 33, 31, 0.6);
         color: #f2f2f2;
         font-size: 15px;
-        padding: 8px 12px;
+        padding: 8px 5%;
         position: absolute;
         bottom: 8px;
         width: 100%;
+        height: 75px;
         text-align: center;
+        border-radius: 5px;
     }
+    .text p {
+        font-family: Arial, sans-serif;
+        font-size: 1.5em;
+    }
+
     .numbertext { 
     color: #f2f2f2;
-    font-size: 12px;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
     padding: 8px 12px;
     position: absolute;
     top: 0;
@@ -88,18 +109,24 @@
 <div class="slideshow-container">
     <div class="mySlides fade">
         <div class="numbertext">1/3</div>
-        <img src="pic_1.jpg" style="width:100%">
-        <div class="text">Caption Text</div>
+        <img src="milken_1.jpg">
+        <div class="text">
+            <p>Caption Text 1</p>
+        </div>
     </div>
     <div class="mySlides fade">
         <div class="numbertext">2/3</div>
-        <img src="pic_2.jpg" style="width:100%">
-        <div class="text">Caption Text</div>
+        <img src="milken_2.jpg" >
+        <div class="text">
+            <p>Caption Text 2</p>
+        </div>
     </div>
     <div class="mySlides fade">
         <div class="numbertext">3/3</div>
-        <img src="pic_3.jpg" style="width:100%">
-        <div class="text">Caption Text</div>
+        <img src="pic_3.jpg" >
+        <div class="text">
+            <p>Caption Text 3</p>
+        </div>
     </div>
     <a class="prev" onclick="nxtSlides(-1)">&#10094;</a>
     <a class="next" onclick="nxtSlides(1)">&#10095;</a>
@@ -137,7 +164,7 @@
             for (i = 0; i < dots.length; i++) {
                     dots[i].className = dots[i].className.replace(" active", "")
                 }
-            slides[slideIndex - 1].style.display = "block";
+            slides[slideIndex - 1].style.display = "flex";
             dots[slideIndex - 1].className += " active";
     }
 
